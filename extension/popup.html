@@ -1,0 +1,79 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        width: 320px;
+        padding: 10px;
+      }
+      textarea {
+        width: 100%;
+        height: 90px;
+      }
+      #result {
+        width: 100%;
+        height: 90px;
+        margin-top: 8px;
+      }
+      button {
+        margin-left: 6px;
+      }
+      /* Loader spinner */
+      #loader {
+        display: none;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #007bff;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        animation: spin 1s linear infinite;
+        margin: auto;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label>Selected text</label>
+      <textarea id="selected"></textarea>
+    </div>
+    <div style="margin-top: 6px">
+      <select id="tone">
+        <option value="formal">Formal</option>
+        <option value="humorous">Humorous</option>
+        <option value="concise">Concise</option>
+      </select>
+      <button id="rewriteBtn">Rewrite</button>
+      <button id="replaceBtn">Replace in page</button>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader">
+      <div class="spinner"></div>
+      <div style="font-size: 12px; color: gray; margin-top: 4px">
+        Rewriting...
+      </div>
+    </div>
+
+    <div>
+      <label>Result</label>
+      <textarea id="result" readonly></textarea>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
